@@ -7,11 +7,15 @@ function reverseString(str){
     return reversed;
 }
 
-console.log(reverseString("Prashant and Mohan"));
+// console.log(reverseString("Prashant and Mohan"));
 
 
 function reverseAnotherString(str){
     return str.split("").reverse().join("");
 }
 
-console.log(reverseAnotherString("Prashant"));
+// console.log(reverseAnotherString("Prashant"));
+
+ str = "mohan and shyam"
+
+// console.log(str.split(" "))
