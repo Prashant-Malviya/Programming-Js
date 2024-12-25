@@ -22,18 +22,13 @@ const twoSumObj = function(nums,target){
 
         var n = nums[i]
 
-        // console.log(obj[target - n]);
         console.log(obj);
         
 
-        if(obj[target - n] >=0)
+        if(obj[target - n] >= 0)
             return [obj[target - n],i];
         else obj[n] = i;
     } 
-
-    // '2' : 0
-    // '4' : 1
-    // '5'
 }
 
 // console.log(twoSumObj([2,4,5,2,5,2],9));
