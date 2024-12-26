@@ -10,6 +10,7 @@ var fib = function(n){
     
     return arr[n];
 }
+fib(12);
 
 // console.log(fib(7))
 
@@ -17,8 +18,10 @@ var recurFib =  function(n){
     if(n<=1)
         return n;
 
+
     return recurFib(n-1) + recurFib(n-2)
 }
+
 
 // console.log(recurFib(7));
 

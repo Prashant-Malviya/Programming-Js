@@ -9,10 +9,10 @@ function removeDuplicates(nums){
         if(nums[i] === nums[i+1]){
             
             nums.splice(i+1,1);
-            console.log('befor',i);
+            // console.log('befor',i);
             
             i--;
-            console.log('after',i);
+            // console.log('after',i);
             
         }
     }

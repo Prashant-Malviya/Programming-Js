@@ -26,7 +26,7 @@ function maxProfit(prices){
     return globalProfit;
 }
 
-const prices = [7,6,4,3,1]
+const prices = [7,6,4,8,9,12]
 
 // console.log(maxProfit(prices));
 
@@ -40,15 +40,17 @@ const maxProfitGreedy = function(prices){
     let profit = 0;
 
     for(let i=1; i<prices.length;i++){
+        
         if(prices[i] < minStockPurchasePrice){
             minStockPurchasePrice = prices[i];
         }
-
+        // console.log(prices[i]);
+        
         profit = Math.max(profit,prices[i]-minStockPurchasePrice);
     }
 
     return profit;
 }
 
-console.log(maxProfitGreedy(prices));
+maxProfitGreedy(prices)
 
