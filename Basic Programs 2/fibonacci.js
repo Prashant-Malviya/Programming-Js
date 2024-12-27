@@ -18,7 +18,6 @@ var recurFib =  function(n){
     if(n<=1)
         return n;
 
-
     return recurFib(n-1) + recurFib(n-2)
 }
 

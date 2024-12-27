@@ -8,7 +8,7 @@ function longestWord(str){
     
 
     for(let word of words){
-        if(longestWord.length < word.length){
+        if(longestWordStr.length < word.length){
             longestWordStr = word;
         }
     }

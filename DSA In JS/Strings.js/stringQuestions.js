@@ -15,7 +15,7 @@ function truncate(str,maxlength){
     }
 }
 
-// console.log(truncate("I am Prashant",5));
+console.log(truncate("I am Prashant",5));
 
 
 // ------------------------------
@@ -58,7 +58,7 @@ function hammingDistance(x,y){
     return distance
 }
 
-// console.log(hammingDistance("hellow","hwllrw"));
+console.log(hammingDistance("hellow","hwllrw"));
 
 
 //Q- Anagram or not
@@ -90,4 +90,4 @@ const isAnagram2 = function(s,t){
     return true;
 }
 // console.log(isAnagram('anagram','nagaram'));
-console.log(isAnagram2('anagram','nagaram'));
+// console.log(isAnagram2('anagram','nagaram'));

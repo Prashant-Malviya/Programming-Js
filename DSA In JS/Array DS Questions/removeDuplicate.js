@@ -4,29 +4,29 @@ Remove Duplicates from sorted array
 
 // input [1,2,2,2] output 2, [1,2,_]
 
-function removeDuplicates(nums){
-    for(let i=0; i<nums.length-1;i++){
-        if(nums[i] === nums[i+1]){
+// function removeDuplicates(nums){
+//     for(let i=0; i<nums.length-1;i++){
+//         if(nums[i] === nums[i+1]){
             
-            nums.splice(i+1,1);
-            // console.log('befor',i);
+//             nums.splice(i+1,1);
+//             // console.log('befor',i);
             
-            i--;
-            // console.log('after',i);
+//             i--;
+//             // console.log('after',i);
             
-        }
-    }
-    return nums.length;
-}
+//         }
+//     }
+//     return nums.length;
+// }
 
-const arr = [1,2,2,2,4,4,4,23,23,22,22];
+// const arr = [1,2,2,2,4,4,4,23,23,22,22];
 
 // console.log(removeDuplicates(arr))
 
 // without js methods = two pointer approach 
 
 function removeDuplicatesWithoutMethods(nums){
-    if(nums.length === 1) return 1;
+    if(nums.length === 1) return 1; 
 
     let i = 0;
 
@@ -36,8 +36,10 @@ function removeDuplicatesWithoutMethods(nums){
             nums[i] = nums[j];
         }
     }
+    console.log(nums);
+    
 
     return i+1;
 }
-console.log(removeDuplicatesWithoutMethods(arr));
+console.log(removeDuplicatesWithoutMethods([1,2,2,3,3,4,4,2,1]));
 

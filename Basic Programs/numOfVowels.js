@@ -4,7 +4,7 @@
 
 const str = "aeiou and i am happy"
 
-arrStr = str.toLocaleLowerCase().split(" ");
+arrStr = str.toLowerCase().split(" ");
 
 console.log(arrStr);
 
