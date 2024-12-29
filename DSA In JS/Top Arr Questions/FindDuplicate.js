@@ -39,6 +39,33 @@ function duplicates(nums){
     return result
 }
 
-console.log(duplicates([1, 2, 3, 6, 3, 6, 1]));
+// console.log(duplicates([1, 2, 3, 6, 3, 6, 1]));
 
 
+function duplicatesAnother(nums){
+    const n = nums.length;
+
+    const freqArr = new Array(n).fill(0);
+
+    const result = [];
+
+    for(const num of nums){
+        console.log("num ",num);
+        
+        freqArr[num]++;
+        // console.log(freqArr);
+        console.log(freqArr[num]);
+        
+    }
+
+    for(let i=0;i<n;i++){
+        if(freqArr[i] > 1)
+            result.push(i);
+    }
+
+    if(result.length === 0) result.push(-1);
+
+    return result;
+}
+
+console.log(duplicatesAnother([1, 2, 3, 6, 3, 6, 1]));
