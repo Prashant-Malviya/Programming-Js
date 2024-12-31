@@ -21,31 +21,24 @@ Explanation: The subarray {5, 4, 1, 7, 8} has the largest sum 25.
 
 */
 
-function maxSubarraySum(arr) {
-    // code here
-    let result = arr[0];
-    let subArr = [];
-    
-    for(let i=0;i<arr.length;i++){
-        
-        let currentSum = 0;
-        
-        for(let j=i;j<arr.length;j++){
-            
-            let k = 0;
 
-            subArr[i][k] = arr[j]
-            console.log(subArr);
-            
-            
-            currentSum += arr[j];
-            
-            result = Math.max(result,currentSum);
+function maxSubArraySum(arr){
+
+    let res = arr[0];
+
+    for(let i=0;i<arr.length;i++){
+
+        let currSum = 0;
+
+        for(let j=i;j<arr.length;j++){
+
+            currSum += arr[j];
+
+            res = Math.max(res,currSum);
         }
     }
-    
-    return result;
-}
-//O(n^2) <-- TC
 
-console.log(maxSubarraySum([2, 3, -8, 7, -1, 2, 3]));
+    return res;
+}
+
+console.log(maxSubArraySum([2, 3, -8, 7, -1, 2, 3]));
