@@ -15,76 +15,68 @@ Explanation: There is no pair with sum equals to given target.
 
 */
 
-
 //bruteforce
 
-function findTwoSumPairBrute(nums,target){
+function findTwoSumPairBrute(nums, target) {
+  let n = nums.length;
 
-    let n = nums.length;
-
-    for(let i=0;i<n;i++){ //O(n)
-        for(let j=i+1;j<n;j++){ // n
-            if(nums[i]+nums[j] === target)
-                return true
-        }
+  for (let i = 0; i < n; i++) {
+    //O(n)
+    for (let j = i + 1; j < n; j++) {
+      // n
+      if (nums[i] + nums[j] === target) return true;
     }
+  }
 
-    return false;
+  return false;
 } //time complexity : O(n^2)
 
 // console.log(findTwoSumPair([0, -1, 2, -3, 1],5))
 // -3,-1,1,2
 
-// using two pointer approach 
-function findTwoSumPairOptimise(nums,target){
-    
-    let left = 0, right = nums.length-1;
+// using two pointer approach
+function findTwoSumPairOptimise(nums, target) {
+  let left = 0,
+    right = nums.length - 1;
 
-    nums.sort((a,b)=>a-b) // modifies original arr
+  nums.sort((a, b) => a - b); // modifies original arr
 
-    while(left < right){
-        let sum = nums[left] + nums[right];
+  while (left < right) {
+    let sum = nums[left] + nums[right];
 
-        if(sum === target){
-            return true
-        }else if(sum < target) left++;
-        else right--;
-    }
+    if (sum === target) {
+      return true;
+    } else if (sum < target) left++;
+    else right--;
+  }
 
-    return false;
-
+  return false;
 } //O(nlog(n))
 
 // console.log(findTwoSumPairOptimise([0, -1, 2, -3, 1],-2));
 
-
 //using set method in js
-function findTwoSumPairMoreOptimise(nums,target){
+function findTwoSumPairMoreOptimise(nums, target) {
+  let set = new Set();
 
-    let set = new Set();
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i]; //[0, -1, 2, -3, 1],-2
+    console.log("complement =", target, " - ", nums[i], " = ", complement);
 
-    for(let i = 0; i<nums.length; i++){
-
-        let complement = target - nums[i]; //[0, -1, 2, -3, 1],-2
-        console.log('complement =' ,target,' - ',nums[i],' = ',complement);
-        
-
-        if(set.has(complement)){
-            return true
-        }
-
-        set.add(nums[i]);
-        console.log(set);
-        
+    if (set.has(complement)) {
+      return true;
     }
 
-    return false;
+    set.add(nums[i]);
+    console.log(set);
+  }
+
+  return false;
 }
 //TC :- O(n);
+
 // SC:- O(n);
 
 // findTwoSumPairMoreOptimise([0, -1, 2, -3, 1],-2);
 
-console.log(findTwoSumPairMoreOptimise([0, -1, 2, -3, 1],-2));
-
-
+console.log(findTwoSumPairMoreOptimise([0, -1, 2, -3, 1], -2));
